@@ -2,5 +2,9 @@ apply plugin: 'spring-boot'
 
 dependencies {
 
-    compile('com.github.eventasia:event-store:1.0.0-SNAPSHOT')
+    compile project(":user-domain")
+
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "com.github.eventasia:event-store:1.0.0-SNAPSHOT"
+
 }

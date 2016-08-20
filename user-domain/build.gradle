@@ -1,0 +1,3 @@
+dependencies {
+    compile('com.github.eventasia:framework:1.0.0-SNAPSHOT')
+}

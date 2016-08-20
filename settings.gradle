@@ -1,3 +1,4 @@
 rootProject.name = 'music-store'
 
 include ':user-service'
+include ':user-domain'
