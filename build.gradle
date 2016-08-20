@@ -1,0 +1,50 @@
+group 'com.github.eventasia.sample.musicstore'
+version '1.0.0-SNAPSHOT'
+
+buildscript {
+    ext {
+        springBootVersion = '1.4.0.RELEASE'
+    }
+    repositories {
+        maven { url = "https://plugins.gradle.org/m2/" }
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('io.spring.gradle:dependency-management-plugin:0.5.4.RELEASE')
+    }
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.14.1'
+  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'jacoco'
+
+    group = rootProject.group
+    version = rootProject.version
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    plugins.withType(JavaPlugin) {
+        jar{
+            version = project.version
+        }
+    }
+
+    dependencies {
+        testCompile('junit:junit:4.12')
+    }
+}
