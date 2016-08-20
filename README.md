@@ -1,1 +1,1 @@
-# eventasia-sample
+# music-store Eventasia sample
