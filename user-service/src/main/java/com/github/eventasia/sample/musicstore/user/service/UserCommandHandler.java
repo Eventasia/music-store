@@ -16,10 +16,10 @@ import java.util.UUID;
 @Component
 public class UserCommandHandler {
 
-    private final AggregateRepository<User> userRepository;
+    private final AggregateRepository<UserAggregate> userRepository;
 
     @Autowired
-    public UserCommandHandler(final AggregateRepository<User> userRepository) {
+    public UserCommandHandler(final AggregateRepository<UserAggregate> userRepository) {
         this.userRepository = userRepository;
     }
 
@@ -57,7 +57,7 @@ public class UserCommandHandler {
 
         /* This is also unnecessary because we already did the validation on the Client Side.
          Validate with the Query Side on your Client before sending this command and the problem was solved.
-        final User user = userRepository.get(modifyPasswordCommand.getUserId());
+        final UserAggregate user = userRepository.get(modifyPasswordCommand.getUserId());
 
         if(user == null) {
             throw new UserNotExistsException(modifyPasswordCommand.getUserId());

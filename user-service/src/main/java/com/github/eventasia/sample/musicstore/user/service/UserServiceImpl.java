@@ -1,6 +1,6 @@
 package com.github.eventasia.sample.musicstore.user.service;
 
-import com.github.eventasia.eventstore.AggregateService;
+import com.github.eventasia.eventstore.service.AggregateService;
 import com.github.eventasia.sample.musicstore.user.command.CreateUserCommand;
 import com.github.eventasia.sample.musicstore.user.command.ModifyPasswordCommand;
 import com.github.eventasia.sample.musicstore.user.command.UserCommand;
@@ -12,10 +12,10 @@ import java.util.UUID;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private final AggregateService<User, UserCommand> aggregateService;
+    private final AggregateService<UserAggregate, UserCommand> aggregateService;
 
     @Autowired
-    public UserServiceImpl(final AggregateService<User, UserCommand> aggregateService) {
+    public UserServiceImpl(final AggregateService<UserAggregate, UserCommand> aggregateService) {
         this.aggregateService = aggregateService;
     }
 

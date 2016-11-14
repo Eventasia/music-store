@@ -4,7 +4,7 @@ import com.github.eventasia.framework.Aggregate;
 
 import java.util.UUID;
 
-public class User implements Aggregate<User> {
+public class UserAggregate implements Aggregate<UserAggregate> {
     private UUID userId;
     private volatile long version;
 

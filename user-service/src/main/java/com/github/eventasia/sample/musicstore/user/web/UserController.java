@@ -1,10 +1,11 @@
-package com.github.eventasia.sample.musicstore.user.service;
+package com.github.eventasia.sample.musicstore.user.web;
 
 import com.github.eventasia.sample.musicstore.user.command.CreateUserCommand;
 import com.github.eventasia.sample.musicstore.user.command.ModifyPasswordCommand;
-import com.github.eventasia.sample.musicstore.user.service.dto.CreateUserRequest;
-import com.github.eventasia.sample.musicstore.user.service.dto.CreateUserResponse;
-import com.github.eventasia.sample.musicstore.user.service.dto.ModifyPasswordRequest;
+import com.github.eventasia.sample.musicstore.user.service.UserService;
+import com.github.eventasia.sample.musicstore.user.dto.CreateUserRequest;
+import com.github.eventasia.sample.musicstore.user.dto.CreateUserResponse;
+import com.github.eventasia.sample.musicstore.user.dto.ModifyPasswordRequest;
 import com.github.eventasia.sample.musicstore.user.service.exception.IllegalCommandException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

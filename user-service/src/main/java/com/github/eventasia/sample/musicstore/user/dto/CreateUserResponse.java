@@ -1,4 +1,4 @@
-package com.github.eventasia.sample.musicstore.user.service.dto;
+package com.github.eventasia.sample.musicstore.user.dto;
 
 import java.io.Serializable;
 import java.util.UUID;

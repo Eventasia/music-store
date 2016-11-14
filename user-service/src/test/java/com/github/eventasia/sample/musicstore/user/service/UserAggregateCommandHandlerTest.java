@@ -16,10 +16,10 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MockitoJUnitRunner.class)
-public class UserCommandHandlerTest {
+public class UserAggregateCommandHandlerTest {
 
     @Mock
-    private AggregateRepository<User> userRepository;
+    private AggregateRepository<UserAggregate> userRepository;
 
     private UserCommandHandler userCommandHandler;
 
@@ -54,7 +54,7 @@ public class UserCommandHandlerTest {
         CreateUserCommand createUserCommand = new CreateUserCommand();
         createUserCommand.setUserId(UUID.randomUUID());
 
-        Mockito.when(userRepository.get(Mockito.any())).thenReturn(new User());
+        Mockito.when(userRepository.get(Mockito.any())).thenReturn(new UserAggregate());
 
         assertThatThrownBy(() -> { userCommandHandler.handleCreateUserCommand(createUserCommand); })
                 .isInstanceOf(UserIdAlreadyExistsException.class);
